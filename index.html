@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Secret Code</h1>
+        <p>You need to crack the code in the fewest number of guesses to win. Fortunately, the machine will tell you
+            when you have guessed the correct number and when it is in the correct spot.</p>
+    </div>
+    <div id="alert">
+        <p>You have Cracked the Secret Code</p>
+    </div>
+    <div class="container">
+        <input type="text" onfocus="this.select();" id="n0" maxlength="1"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();" />
+        <input type="text" onfocus="this.select();" id="n1" maxlength="1"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();"/>
+        <input type="text" onfocus="this.select();" id="n2" maxlength="1"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();" />
+        <input type="text" onfocus="this.select();" id="n3" maxlength="1"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();" />
+
+        <div class="innerdiv">
+            <span id="0" class="dot"></span>
+            <span id="1" class="dot"></span>
+            <span id="2" class="dot"></span>
+            <span id="3" class="dot"></span>
+        </div>
+        <div class="innerdiv">
+            <input id="submit" type="submit" value="Check" onclick="check();">
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

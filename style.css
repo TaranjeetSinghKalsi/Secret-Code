@@ -1,0 +1,70 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("bg.jpg");
+    background-size: 100%;
+    box-sizing: border-box;
+}
+
+.container>input {
+    width: 40px;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.container {
+    margin: 10vh auto;
+    width: fit-content;
+    padding: 1rem;
+    background-color: rgb(218, 255, 217);
+    border-radius: 10%;
+}
+
+.innerdiv {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.innerdiv>.dot {
+    height: 25px;
+    width: 25px;
+    background-color: rgba(187, 187, 187, 0.575);
+    border-radius: 50%;
+    display: inline-block;
+    padding: 0.7rem;
+}
+
+#submit {
+    padding: 0.5rem;
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(194, 81, 0);
+}
+
+.heading {
+    margin: 10vh auto;
+    width: 80%;
+    padding: 1rem;
+    color: rgb(194, 81, 0);
+    background-color: rgb(218, 255, 217);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+h1 {
+    color: rgb(194, 81, 0);
+}
+
+#alert {
+    display: none;
+    text-align: center;
+    font-size: xx-large;
+    color: green;
+    font-weight: bold;
+    background-color: rgb(218, 255, 217);
+    width: 70%;
+    margin: 0vh auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
