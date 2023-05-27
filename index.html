@@ -10,33 +10,64 @@
 </head>
 
 <body>
-    <div class="heading">
-        <h1>Secret Code</h1>
-        <p>You need to crack the code in the fewest number of guesses to win. Fortunately, the machine will tell you
-            when you have guessed the correct number and when it is in the correct spot.</p>
+    <div id="popup-container">
+        <div id="popup">
+            <h2 id="popup-heading">Title</h2>
+            <p id="popup-para">Message</p>
+            <button type="button" onclick="location.reload();" class="button popup-btn">Play Again</button>
+        </div>
     </div>
-    <div id="alert">
-        <p>You have Cracked the Secret Code</p>
-    </div>
-    <div class="container">
-        <input type="text" onfocus="this.select();" id="n0" maxlength="1"
-            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();" />
-        <input type="text" onfocus="this.select();" id="n1" maxlength="1"
-            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();"/>
-        <input type="text" onfocus="this.select();" id="n2" maxlength="1"
-            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();" />
-        <input type="text" onfocus="this.select();" id="n3" maxlength="1"
-            oninput="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value && this.nextElementSibling.focus();" />
+    <div id="popup-effected-blur-area">
+        <div class="heading">
+            <div class="flex">
+                <h1>Secret Code</h1>
+                <h2>Time left: <span id="timer">100</span> seconds</h2>
+                <h2>Attempts left: <span id="chances">7</span></h2>
 
-        <div class="innerdiv">
-            <span id="0" class="dot"></span>
-            <span id="1" class="dot"></span>
-            <span id="2" class="dot"></span>
-            <span id="3" class="dot"></span>
+            </div>
+            <p>Welcome! You have to crack the 4 digit code (non-repeating digits) in the fewest number of guesses.
+                Fortunately, the machine
+                indicate following colors which tells:
+            </p>
+            <ol>
+                <li>Green- The Secret Code contains this Digit and it is placed in its correct position.</li>
+                <li>Yellow- The Secret Code contains this Digit but it is not placed in its correct position.</li>
+                <li>Red- The Secret Code does not contains this Digit.</li>
+            </ol>
         </div>
-        <div class="innerdiv">
-            <input id="submit" type="submit" value="Check" onclick="check();">
+
+        <div class="container flex">
+            <div class="flex-col">
+                <input placeholder="C" type="text" onfocus="if(this.nextElementSibling.style.backgroundColor=='green') document.getElementsByTagName('input')[1].focus();
+                else this.select();" id="n0" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                    onkeyup="document.getElementsByTagName('input')[1].focus();" />
+                <span id="0" class="dot"></span>
+            </div>
+            <div class="flex-col">
+                <input placeholder="O" type="text" onfocus="if(this.nextElementSibling.style.backgroundColor=='green') document.getElementsByTagName('input')[2].focus();
+                else this.select();" id="n1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                    onkeyup="document.getElementsByTagName('input')[2].focus();"
+                    onselect="if(this.nextElementSibling.style.backgroundColor=='green') document.getElementsByTagName('input')[2].focus();" />
+                <span id="1" class="dot"></span>
+            </div>
+            <div class="flex-col">
+                <input placeholder="D" type="text" onfocus="if(this.nextElementSibling.style.backgroundColor=='green') document.getElementsByTagName('input')[3].focus();
+                else this.select();" id="n2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                    onkeyup="document.getElementsByTagName('input')[3].focus();"
+                    onselect="if(this.nextElementSibling.style.backgroundColor=='green') document.getElementsByTagName('input')[3].focus();" />
+                <span id="2" class="dot"></span>
+            </div>
+            <div class="flex-col">
+                <input placeholder="E" type="text" onfocus="if(this.nextElementSibling.style.backgroundColor=='green') document.getElementsByTagName('input')[4].focus();
+                else this.select();" id="n3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                    onkeyup="document.getElementsByTagName('input')[4].focus();"
+                    onselect="if(this.nextElementSibling.style.backgroundColor=='green') document.getElementsByTagName('input')[4].focus();" />
+                <span id="3" class="dot"></span>
+            </div>
         </div>
+
+        <input id="submit-btn" type="submit" value="Check" onclick="check();"
+        onkeyup="document.getElementsByTagName('input')[0].focus();">
     </div>
 </body>
 <script src="script.js"></script>
